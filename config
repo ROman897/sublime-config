@@ -1,0 +1,126 @@
+[
+	{ "keys": ["alt+j"], "command": "move", "args": {"by": "characters", "forward": false} },
+	{ "keys": ["alt+l"], "command": "move", "args": {"by": "characters", "forward": true} },
+	{ "keys": ["alt+i"], "command": "move", "args": {"by": "lines", "forward": false} },
+	{ "keys": ["alt+k"], "command": "move", "args": {"by": "lines", "forward": true} },
+
+	{ "keys": ["alt+shift+j"], "command": "move", "args": {"by": "words", "forward": false} },
+	{ "keys": ["alt+shift+l"], "command": "move", "args": {"by": "word_ends", "forward": true} },
+	{ "keys": ["super+j"], "command": "move", "args": {"by": "words", "forward": false, "extend": true} },
+	{ "keys": ["super+l"], "command": "move", "args": {"by": "word_ends", "forward": true, "extend": true} },
+
+	{ "keys": ["super+i"], "command": "move", "args": {"by": "lines", "forward": false, "extend": true} },
+	{ "keys": ["super+k"], "command": "move", "args": {"by": "lines", "forward": true, "extend": true} },
+	{ "keys": ["alt+shift+i"], "command": "swap_line_up" },
+	{ "keys": ["alt+shift+k"], "command": "swap_line_down" },
+
+	{ "keys": ["alt+super+j"], "command": "move_to", "args": {"to": "bol", "extend": false} },
+	{ "keys": ["alt+super+l"], "command": "move_to", "args": {"to": "eol", "extend": false} },
+
+	{ "keys": ["alt+o"], "command": "left_delete" },
+	{ "keys": ["alt+shift+o"], "command": "delete_word", "args": { "forward": false } },
+	{ "keys": ["super+o"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete to Hard BOL.sublime-macro"} },
+	{ "keys": ["alt+super+o"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
+	{ "keys": ["alt+super+p"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
+	{ "keys": ["alt+super+i"], "command": "select_lines", "args": {"forward": false} },
+	{ "keys": ["alt+super+k"], "command": "select_lines", "args": {"forward": true} },
+
+	{"keys": ["alt+p"], "command": "right_delete" },
+	{"keys": ["alt+shift+p"], "command": "delete_word", "args": { "forward": true } },
+	{ "keys": ["super+p"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete to Hard EOL.sublime-macro"} },
+
+	{ "keys": ["alt+u"], "command": "next_view" },
+	{ "keys": ["super+u"], "command": "prev_view" },
+
+	{ "keys": ["alt+;"], "command": "find_next", "context":
+		[{"key": "panel", "operand": "find"}, {"key": "panel_has_focus"}]
+	},
+	{ "keys": ["alt+shift+;"], "command": "find_prev", "context":
+		[{"key": "panel", "operand": "find"}, {"key": "panel_has_focus"}]
+	},
+	{ "keys": ["down"], "command": "find_all", "args": {"close_panel": true},
+		 "context": [{"key": "panel", "operand": "find"}, {"key": "panel_has_focus"}]
+	},
+
+	{ "keys": ["alt+;"], "command": "find_next", "context":
+		[{"key": "panel", "operand": "replace"}, {"key": "panel_has_focus"}]
+	},
+	{ "keys": ["alt+shift+;"], "command": "find_prev", "context":
+		[{"key": "panel", "operand": "replace"}, {"key": "panel_has_focus"}]
+	},
+	{ "keys": ["alt+shift+["], "command": "replace_next", "args": {"close_panel": true},
+		"context": [{"key": "panel", "operand": "replace"}, {"key": "panel_has_focus"}]
+	},
+
+	{ "keys": ["alt+h"], "command": "show_panel", "args": {"panel": "replace", "reverse": false} },
+
+	{ "keys": ["alt+["], "command": "replace_all", "args": {"close_panel": true},
+		 "context": [{"key": "panel", "operand": "replace"}, {"key": "panel_has_focus"}]
+	},
+
+	{ "keys": ["alt+n"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
+
+	{ "keys": ["alt+,"], "command": "move_to_neighboring_group", "args": {"forward": false} },
+	{ "keys": ["alt+."], "command": "move_to_neighboring_group" },
+
+	{ "keys": ["super+m"], "command": "close_file" },
+	{ "keys": ["alt+s"], "command": "save_all" },
+	{ "keys": ["super+,"], "command": "focus_neighboring_group", "args": {"forward": false} },
+	{ "keys": ["super+."], "command": "focus_neighboring_group" },
+	{ "keys": ["alt+g"], "command": "file_navigator" },
+	{ "keys": ["super+g"], "command": "new_file" },
+	{ "keys": ["super+n"], "command": "goto_definition" },
+	{ "keys": ["alt+9"], "command": "move", "args": {"by": "pages", "forward": false} },
+	{ "keys": ["alt+0"], "command": "move", "args": {"by": "pages", "forward": true} },
+
+		{ "keys": ["alt+n"], "command": "single_selection", "context":
+		[
+			{ "key": "num_selections", "operator": "not_equal", "operand": 1 }
+		]
+	},
+	{ "keys": ["alt+n"], "command": "clear_fields", "context":
+		[
+			{ "key": "has_next_field", "operator": "equal", "operand": true }
+		]
+	},
+	{ "keys": ["alt+n"], "command": "clear_fields", "context":
+		[
+			{ "key": "has_prev_field", "operator": "equal", "operand": true }
+		]
+	},
+	{ "keys": ["alt+n"], "command": "hide_panel", "args": {"cancel": true},
+		"context":
+		[
+			{ "key": "panel_visible", "operator": "equal", "operand": true }
+		]
+	},
+	{ "keys": ["alt+n"], "command": "hide_overlay", "context":
+		[
+			{ "key": "overlay_visible", "operator": "equal", "operand": true }
+		]
+	},
+	{ "keys": ["alt+n"], "command": "hide_popup", "context":
+		[
+			{ "key": "popup_visible", "operator": "equal", "operand": true }
+		]
+	},
+	{ "keys": ["alt+n"], "command": "hide_auto_complete", "context":
+		[
+			{ "key": "auto_complete_visible", "operator": "equal", "operand": true }
+		]
+	},
+	{ "keys": ["alt+m"], "command": "move_to", "args": {"to": "brackets"} },
+
+	{ "keys": ["super+d"], "command": "duplicate_line" },
+	{ "keys": ["alt+b"], "command": "show_overlay", "args": {"overlay": "goto", "text": ":"} },
+	{ "keys": ["super+alt+u"], "command": "expand_selection", "args": {"to": "brackets"} },
+
+
+
+
+	
+
+
+]
+
+
